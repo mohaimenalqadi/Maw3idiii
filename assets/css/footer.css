@@ -1,0 +1,91 @@
+/* ======= الفوتر الموحد لكل الصفحات ======= */
+.footer {
+  color: #333;
+  padding: 2.5em 0 1.2em 0;
+  margin-top: 0.5em;
+  background: linear-gradient(120deg, #f8faff 70%, #e3f0ff 100%);
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2.5em 1.5em;
+}
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 200px;
+  margin-bottom: 1.5em;
+}
+.footer-section h4 {
+  color: #b388ff;
+  font-size: 1.15em;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.5px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.7em 0;
+}
+.footer-section ul li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+.footer-section ul li a {
+  color: #6c63ff;
+  transition: color 0.2s;
+}
+.footer-section ul li a:hover {
+  color: #4a3fa3;
+  text-decoration: underline;
+}
+.footer-about p {
+  font-size: 0.98em;
+  color: #555;
+  margin: 0.5em 0 0 0;
+}
+.footer-social .social-icons {
+  display: flex;
+  gap: 0.7em;
+  margin-bottom: 0.7em;
+}
+.footer-social .social-icons a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #e0e0ef;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.footer-social .social-icons a img:hover {
+  transform: scale(1.13) rotate(-5deg);
+  box-shadow: 0 2px 8px #b388ff44;
+}
+.footer-section.footer-about {
+  max-width: 270px;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0.5em 0;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-section {
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  .footer-section ul {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+  .footer-social .social-icons {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+}

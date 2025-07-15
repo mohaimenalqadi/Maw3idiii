@@ -1,0 +1,401 @@
+<!--
+feat: add index.html for appointment platform (Arabic RTL, flex)
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>منصة موعدي</title>
+    <link rel="icon" href="assets/img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Figma mockup: https://www.figma.com/design
+     /9NkGpqa2bEdg98oLTn7D5U/Untitled?node-id=1-356&t=rfSeVZUSrbo5Ap0k-1 -->
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">موعدي</a>
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="navbar-links" id="navbar-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">الخدمات</a>
+            <div class="dropdown-content">
+              <a href="category-doctors.html">أطباء</a>
+              <a href="category-teachers.html">أساتذة</a>
+              <a href="category-workers.html">عمّال</a>
+            </div>
+          </li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+          <li><a href="login.html">تسجيل الدخول</a></li>
+          <li><a href="signup-customer.html" class="cta">إنشاء حساب</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="typing-text">
+          منصتك الذكية لحجز المواعيد مع أفضل المتخصصين في ليبيا
+        </h1>
+        <p class="typing-text">
+          اكتشف تجربة حجز عصرية تجمع بين السرعة، السهولة، والموثوقية. احجز موعدك
+          مع الأطباء، المهندسين، الأساتذة وغيرهم بضغطة زر، أينما كنت وفي أي وقت.
+        </p>
+        <form id="provider-search-form" class="provider-search-bar">
+          <input
+            type="text"
+            id="provider-search-input"
+            placeholder="ابحث عن مزود خدمة بالاسم..."
+            autocomplete="off"
+          />
+          <button type="submit">بحث</button>
+        </form>
+        <div class="hero-image-wrapper">
+          <img
+            class="hero-image"
+            src="assets/img/hero-section.png"
+            alt="منصة الحجز الليبية - صورة تعريفية"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- About Platform Section -->
+    <section class="about-platform">
+      <div class="about-platform-container">
+        <div class="about-platform-image">
+          <video
+            controls
+            poster="assets/img/hero-placeholder.jpg"
+            aria-label="فيديو تعريفي عن المنصة"
+            autoplay
+            loop
+            muted
+          >
+            <source
+              src="assets/video/vecteezy_rate-product-with-review-stars-from-customer-satisfaction_35443296.mp4"
+              type="video/mp4"
+            />
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+        <div class="about-platform-content">
+          <h2>ما هي منصتنا؟</h2>
+          <p>
+            <strong>منصتنا</strong> هي بوابتك الذكية لحجز المواعيد الطبية
+            والمهنية في ليبيا بسهولة وسرعة، دون الحاجة للانتظار أو الاتصالات
+            التقليدية. سواء كنت تبحث عن طبيب، مهندس، أستاذ أو أي مقدم خدمة، نوفر
+            لك أفضل الخيارات في مدينتك أو منطقتك.
+          </p>
+          <p>
+            هدفنا أن نجعل تجربة الحجز أكثر راحة وشفافية، مع دعم كامل لجميع المدن
+            الليبية، وتوفير تقييمات حقيقية، وأسعار واضحة، وخدمة عملاء متجاوبة.
+            كل ما تحتاجه في منصة واحدة تجمع بين الأمان، الجودة، وسهولة
+            الاستخدام.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Platform Section (مميزات المنصة) -->
+    <section class="why-platform">
+      <h2 class="why-title">لماذا تختار منصتنا؟</h2>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-icon" aria-label="سهولة الاستخدام">
+            <img
+              src="https://img.icons8.com/fluency/48/000000/touchscreen-smartphone.png"
+              alt="سهولة الاستخدام"
+            />
+          </div>
+          <h3>سهولة الاستخدام</h3>
+          <p>
+            واجهة بسيطة وسريعة تتيح لك الحجز أو الاستفسار في ثوانٍ، دون أي تعقيد
+            أو خطوات طويلة. كل ما تحتاجه في متناول يدك.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-label="تنوع الخدمات">
+            <img
+              src="https://img.icons8.com/fluency/48/000000/services.png"
+              alt="تنوع الخدمات"
+            />
+          </div>
+          <h3>تنوع الخدمات</h3>
+          <p>
+            اختر من بين مئات الأطباء، المهندسين، الأساتذة، والمهنيين في جميع
+            المدن الليبية. منصة واحدة لكل احتياجاتك اليومية والمهنية.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-label="دعم فوري">
+            <img
+              src="https://img.icons8.com/fluency/48/000000/customer-support.png"
+              alt="دعم فوري"
+            />
+          </div>
+          <h3>دعم فوري وشفاف</h3>
+          <p>
+            فريق دعم متواجد دائماً لمساعدتك والإجابة عن استفساراتك. كل الأسعار
+            واضحة، ولا رسوم خفية أو مفاجآت.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-label="حجوزات آمنة">
+            <img
+              src="https://img.icons8.com/fluency/48/000000/lock-2.png"
+              alt="حجوزات آمنة"
+            />
+          </div>
+          <h3>حجوزات آمنة وموثوقة</h3>
+          <p>
+            جميع مقدمي الخدمات معتمدون وموثوقون. بياناتك ومواعيدك في أمان تام،
+            ويمكنك تقييم تجربتك بعد كل حجز.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Info Section (معلومات تسويقية إضافية) -->
+    <section class="platform-info">
+      <div class="platform-info-content">
+        <h2>منصة تجمع ليبيا في مكان واحد</h2>
+        <ul>
+          <li>
+            <strong>تجربة متكاملة:</strong> من البحث إلى الحجز والتقييم، كل شيء
+            يتم إلكترونياً دون الحاجة للانتظار أو الاتصالات التقليدية.
+          </li>
+          <li>
+            <strong>دعم المدن الليبية:</strong> خدماتنا تغطي طرابلس، بنغازي،
+            مصراتة، سبها، وكل المدن والمناطق.
+          </li>
+          <li>
+            <strong>تقييمات حقيقية:</strong> اقرأ تقييمات وآراء المستخدمين
+            الآخرين قبل اختيار مقدم الخدمة.
+          </li>
+          <li>
+            <strong>إشعارات وتنبيهات:</strong> تصلك إشعارات بمواعيدك وتذكيراتك
+            على بريدك الإلكتروني أو هاتفك.
+          </li>
+          <li>
+            <strong>حجز مرن:</strong> يمكنك تعديل أو إلغاء الحجز بسهولة حسب
+            سياسة كل مقدم خدمة.
+          </li>
+        </ul>
+        <div class="platform-cta">
+          <a href="signup-customer.html" class="cta-btn"
+            >انضم الآن وابدأ تجربتك</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Teaser Cards -->
+    <section class="services">
+      <h2>الخدمات المتوفرة</h2>
+      <div class="services-details-modern">
+        <a href="category-doctors.html" class="service-detail-modern">
+          <div class="service-detail-img">
+            <img src="assets/img/Daco_4089669.png" alt="أطباء" />
+          </div>
+          <div class="service-detail-content">
+            <h4>الأطباء</h4>
+            <p>حجز موعد مع أفضل الأطباء في ليبيا بسهولة وأمان.</p>
+          </div>
+        </a>
+        <a href="category-teachers.html" class="service-detail-modern">
+          <div class="service-detail-img">
+            <img src="assets/img/Male-Teacher-PNG-Picture.png" alt="أساتذة" />
+          </div>
+          <div class="service-detail-content">
+            <h4>الأساتذة</h4>
+            <p>دروس خصوصية مع نخبة من المعلمين لجميع المراحل.</p>
+          </div>
+        </a>
+        <a href="category-workers.html" class="service-detail-modern">
+          <div class="service-detail-img">
+            <img
+              src="assets/img/vecteezy_skilled-construction-worker-in-bright-uniform-posing_53717761.png"
+              alt="عمّال"
+            />
+          </div>
+          <div class="service-detail-content">
+            <h4>العمّال</h4>
+            <p>خدمات مهنية متنوعة من أمهر العمال والمهنيين.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Journey Section (New Professional Design) -->
+    <section class="journey-section">
+      <div class="journey-container">
+        <div class="journey-split-container">
+          <!-- Card for Providers -->
+          <a href="signup-provider.html" class="journey-card journey-provider">
+            <h3>هل أنت مستعد لتحويل مهاراتك إلى دخل؟</h3>
+            <div class="journey-card-action">
+              <span>انضم إلينا</span>
+            </div>
+          </a>
+
+          <!-- Card for Customers -->
+          <a href="signup-customer.html" class="journey-card journey-customer">
+            <h3>هل تبحث عن خدمة سريعة وموثوقة؟</h3>
+            <div class="journey-card-action">
+              <span>ابحث الآن</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img
+              src="https://img.icons8.com/fluency/48/star.png"
+              alt="رضا العملاء"
+            />
+          </div>
+          <h3 class="stat-number" data-target="88">0</h3>
+          <p>% رضا العملاء</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img
+              src="https://img.icons8.com/fluency/48/task-completed.png"
+              alt="حجز مكتمل"
+            />
+          </div>
+          <h3 class="stat-number" data-target="421">0</h3>
+          <p>حجز مكتمل</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img
+              src="https://img.icons8.com/fluency/48/smiling.png"
+              alt="عميل راضٍ"
+            />
+          </div>
+          <h3 class="stat-number" data-target="370">0</h3>
+          <p>عميل راضٍ</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img
+              src="https://img.icons8.com/fluency/48/conference-call.png"
+              alt="مقدم خدمة"
+            />
+          </div>
+          <h3 class="stat-number" data-target="55">0</h3>
+          <p>مقدم خدمة</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <h2>قسم التواصل</h2>
+      <div class="cta-banner-btns">
+        <a href="contact.html" class="cta-btn">تواصل معنا</a>
+        <a href="faq.html" class="cta-btn cta-faq">الأسئلة الشائعة</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section footer-quicklinks">
+          <h4>الوصول السريع</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category-doctors.html">الأطباء</a></li>
+            <li><a href="category-teachers.html">الأساتذة</a></li>
+            <li><a href="category-workers.html">العمّال</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="login.html">تسجيل الدخول</a></li>
+            <li><a href="signup-customer.html">إنشاء حساب</a></li>
+          </ul>
+        </div>
+        <div class="footer-section footer-contact">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>
+              <span style="font-weight: bold">الموقع:</span> بنغازي – ليبيا
+            </li>
+            <li>
+              <span style="font-weight: bold">الهاتف:</span> ‎+218 91 2345678
+            </li>
+            <li>
+              <span style="font-weight: bold">البريد:</span>
+              <a href="mailto:info@platform.ly">info@platform.ly</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section footer-social">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="فيسبوك"
+              ><img
+                src="https://img.icons8.com/color/48/000000/facebook-new.png"
+                alt="فيسبوك"
+            /></a>
+            <a href="https://twitter.com" target="_blank" aria-label="تويتر"
+              ><img
+                src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+                alt="تويتر"
+            /></a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="انستغرام"
+              ><img
+                src="https://img.icons8.com/color/48/000000/instagram-new.png"
+                alt="انستغرام"
+            /></a>
+            <a
+              href="https://wa.me/218912345678"
+              target="_blank"
+              aria-label="واتساب"
+              ><img
+                src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                alt="واتساب"
+            /></a>
+          </div>
+        </div>
+        <div class="footer-section footer-about">
+          <h4>عن المنصة</h4>
+          <p>
+            منصة ليبية متخصصة في ربط العملاء مع أفضل الأطباء والمتخصصين في جميع
+            أنحاء ليبيا.<br />
+            جميع الحقوق محفوظة &copy; 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

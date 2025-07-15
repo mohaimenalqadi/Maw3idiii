@@ -1,0 +1,293 @@
+/* =============================== */
+/*        أنماط عامة مشتركة        */
+/* =============================== */
+
+/* توحيد حجم أزرار تفاصيل وحجز الآن في كارد مزود الخدمة (جميع الصفحات التي تعرض كروت مزودين) */
+.provider-card .card-btns {
+  display: flex;
+  gap: 0.7em;
+}
+.provider-card .card-btns .cta-btn,
+.provider-card .card-btns .details-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-radius: var(--radius-lg);
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+/* ========== Import Google Font ========== */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+@import url("common.css");
+
+/* ========== Root Variables ========== */
+:root {
+  --primary-gradient: linear-gradient(90deg, #6ec6ff 0%, #b388ff 100%);
+  --primary: #6ec6ff;
+  --secondary: #b388ff;
+  --accent: #f8fafc;
+  --text: #222;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 1.2em;
+  --radius-sm: 0.7em;
+  --radius-lg: 2em;
+}
+
+/* ========== Page-Specific & Utility Styles ========== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tajawal", Arial, Helvetica, sans-serif;
+  background: var(--accent);
+  color: var(--text);
+  direction: rtl;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  margin: 0.5em 0 0.3em 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e0e0e0;
+  padding: 0.7em 1em;
+  margin-bottom: 1em;
+  outline: none;
+  box-sizing: border-box;
+}
+
+button,
+.cta-btn {
+  background: var(--primary-gradient);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(110, 198, 255, 0.08);
+}
+
+button:hover,
+.cta-btn:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.8em 2.2em;
+  font-size: 1.1rem;
+  border-radius: var(--radius-lg);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.gap-1 {
+  gap: 1em;
+}
+.gap-2 {
+  gap: 2em;
+}
+.rounded {
+  border-radius: var(--radius);
+}
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* =============================== */
+/*    صفحات التصنيفات (الأطباء، المعلمين، العمال)    */
+/* =============================== */
+/* ========== Filters & Cards (Doctors Category) ========== */
+
+.filters {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1em 1.5em;
+}
+.providers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.provider-card:hover {
+  box-shadow: 0 4px 16px rgba(110, 198, 255, 0.18);
+}
+.provider-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1em;
+}
+.provider-card h3 {
+  margin-bottom: 0.5em;
+  color: var(--secondary);
+}
+.provider-card .rating {
+  color: #ffb400;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+.provider-card .specialty,
+.provider-card .city,
+.provider-card .price,
+.provider-card .times {
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+.provider-card .card-btns {
+  display: flex;
+  gap: 0.7em;
+  margin-top: 1em;
+}
+.card-btns .cta-btn,
+.card-btns .details-btn {
+  padding: 0.5em 1.2em;
+  border-radius: var(--radius-lg);
+  font-size: 1em;
+  font-weight: 700;
+}
+.details-btn {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  transition: background 0.2s, color 0.2s;
+}
+.details-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* =============================== */
+/*      صفحات تفاصيل مزود الخدمة      */
+/* =============================== */
+/* ========== Provider Details ========== */
+/* تم نقل جميع أنماط provider-sidebar, provider-layout, provider-content, modal, modal-content إلى provider.css بالكامل */
+/*
+.provider-main {}
+.provider-header {}
+.provider-header img {}
+.provider-info {}
+.provider-info h2 {}
+.provider-info .rating {}
+.provider-info .specialty,
+.provider-info .city,
+.provider-info .price,
+.provider-info .times {}
+.book-btn {}
+.book-btn:hover {}
+.provider-video {}
+.provider-map {}
+body[class*="provider-"] .provider-main,
+body.provider-page .provider-main {}
+.provider-layout {}
+.provider-sidebar {}
+.provider-sidebar img {}
+.provider-sidebar h2 {}
+.provider-sidebar .provider-specialty {}
+.provider-sidebar .provider-city {}
+.provider-sidebar .provider-rating {}
+.provider-sidebar .provider-rating .star {}
+.provider-sidebar .provider-price {}
+.provider-sidebar .book-btn {}
+.provider-content {}
+.provider-section {}
+.provider-section h3 {}
+.provider-bio {}
+.provider-services-list {}
+.provider-service {}
+.provider-video {}
+.provider-schedule-table {}
+.provider-schedule-table th,
+.provider-schedule-table td {}
+.provider-schedule-table th {}
+.provider-reviews {}
+.review {}
+.review .reviewer {}
+.review .review-rating {}
+.review .review-text {}
+.modal {}
+.modal-content {}
+.modal-content h3 {}
+.modal-content label {}
+.modal-content input,
+.modal-content select {}
+.modal-content .cta-btn {}
+#close-modal {}
+@media (max-width: 900px) {
+  .provider-layout {}
+  .provider-sidebar {}
+}
+@media (max-width: 600px) {
+  .provider-main {}
+  .provider-content {}
+  .modal-content {}
+}
+*/

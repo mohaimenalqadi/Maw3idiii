@@ -1,0 +1,952 @@
+/*
+للحصول على تأثير الكتابة المتحركة (Typing Text) على النص الرئيسي في .hero-content:
+1. ضع النص الرئيسي داخل عنصر (span أو h1/h2) وأضف له الكلاس typing-text.
+مثال:
+<div class="hero-content">
+  <span class="typing-text">منصتك الذكية لحجز المواعيد بسهولة</span>
+  ... باقي المحتوى ...
+</div>
+*/
+
+/* ====== Hero Image Animation ====== */
+
+.hero-image {
+  /* ...existing code... */
+  opacity: 0;
+  transform: scale(0.85) translateY(48px);
+  animation: heroImgIn 1.7s cubic-bezier(0.22, 0.68, 0.36, 1) 0.18s forwards;
+}
+
+@keyframes heroImgIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(48px);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-10px);
+    box-shadow: 0 12px 36px #b388ff33;
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.01) translateY(2px);
+    box-shadow: 0 6px 28px #b388ff22;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: 0 4px 24px rgba(110, 198, 255, 0.13);
+  }
+}
+/* =============================== */
+/*         الصفحة الرئيسية         */
+/* =============================== */
+/* شريط البحث في الهيرو */
+.provider-search-bar {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 1.2em;
+}
+.provider-search-bar input[type="text"] {
+  border: 1.3px solid #b388ff;
+  border-radius: 2em;
+  font-size: 1.08em;
+  width: 320px;
+  transition: border 0.2s;
+}
+.provider-search-bar input[type="text"]:focus {
+  border-color: #4dbeff;
+}
+.provider-search-bar button {
+  background: #7c4dff;
+  color: #fff;
+  border: none;
+  border-radius: 2em;
+  font-size: 1.08em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.provider-search-bar button:hover {
+  background: #584974;
+}
+/* ========== Hero Section (الرئيسية) ========== */
+.hero {
+  position: relative;
+  background: var(--primary-gradient);
+  color: #fff;
+  padding: 3em 0 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 420px;
+}
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-image-wrapper {
+  position: relative;
+  left: unset;
+  bottom: -39px;
+  margin-top: 2.2em;
+  z-index: 3;
+}
+.hero-image {
+  max-width: 520px;
+}
+/* ========== Responsive (احترافي وبسيط) ========== */
+@media (max-width: 900px) {
+  .services-cards,
+  .blog-posts {
+    flex-wrap: wrap;
+    gap: 1.2em;
+  }
+
+  .service-card,
+  .blog-post,
+  .why-card {
+    width: 90vw;
+    max-width: 350px;
+  }
+  .service-detail-modern,
+  .about-platform-container {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+    padding: 1.2em 0.5em;
+  }
+
+  .service-detail-img img {
+    height: 120px;
+    max-width: 200px; /* تحديد عرض أقصى للصورة */
+    border-radius: 1em;
+    align-self: center;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding: 2em 0 1.5em 0;
+    min-height: auto;
+  }
+  .hero-content {
+    max-width: 95vw;
+    font-size: 1em;
+  }
+  .provider-search-bar {
+    flex-direction: row;
+    width: 90%;
+    gap: 0.8em;
+  }
+  .provider-search-bar input[type="text"],
+  .provider-search-bar button {
+    width: 100%;
+    font-size: 1em;
+  }
+  .hero-image-wrapper {
+    margin-top: 1.2em;
+    margin-bottom: 0.55em;
+  }
+  .hero-image {
+    max-width: 85vw;
+    border-radius: 0.7em;
+  }
+  .services {
+    padding: 1.2em 0 1em 0;
+  }
+  .service-card {
+    padding: 1em 0.5em;
+  }
+  .service-detail-modern {
+    width: 80%;
+    padding: 1.5em;
+    border-radius: 1.5em;
+    gap: 1.5em;
+    flex-direction: column;
+    box-sizing: border-box; /* يمنع الهوامش الداخلية من التسبب في تجاوز العرض */
+  }
+  .service-detail-img img {
+    height: 120px; /* زيادة ارتفاع الصورة قليلًا */
+    max-width: 200px; /* تحديد عرض أقصى للصورة */
+    border-radius: 1em;
+    align-self: center;
+  }
+  .service-detail-content h4 {
+    font-size: 1.5rem; /* تكبير الخط قليلًا */
+    text-align: center;
+    margin-top: 0;
+  }
+  .service-detail-content p {
+    font-size: 1rem;
+    margin-bottom: 1.2em;
+  }
+  .about-platform-content h2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .about-platform-content p {
+    font-size: 0.95rem;
+  }
+  .about-platform-image video {
+    min-height: 80px;
+    border-radius: 0.7em;
+  }
+  .blog-post {
+    padding: 1em 0.5em;
+  }
+  .blog-post img {
+    height: 90px;
+  }
+  .why-card {
+    padding: 1em 0.5em;
+    min-height: 180px;
+  }
+  .why-card h3 {
+    font-size: 1rem;
+  }
+  .why-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========== Services Section (الرئيسية) ========== */
+.services {
+  padding: 3em 0 2em 0;
+  background: #fff;
+}
+.services h2 {
+  text-align: center;
+  margin-bottom: 5em;
+  letter-spacing: 0.5px;
+  font-size: 1.7rem;
+
+  color: var(--primary);
+}
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+.service-card {
+  background: #f8faff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5em 1em 1em 1em;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.service-card:hover {
+  box-shadow: 0 4px 16px rgba(110, 198, 255, 0.18);
+}
+.service-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1em;
+}
+.service-card h3 {
+  margin-bottom: 0.7em;
+  color: var(--secondary);
+}
+
+.more-btn {
+  background: var(--primary-gradient);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 0.5em 1.5em;
+  font-weight: 700;
+  margin-top: 1em;
+  transition: background 0.2s;
+}
+.more-btn:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+}
+
+/* تفاصيل الخدمات في الصفحة الرئيسية */
+.services-details {
+  margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.service-detail {
+  display: flex;
+  align-items: center;
+  background: #f8faff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5em 1em;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+.service-detail-img {
+  height: 120px;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+}
+
+.service-detail-content .more-btn {
+  font-size: 1rem;
+  padding: 0.5em 1.5em;
+}
+
+/* ========== Modern Services Details (الرئيسية) ========== */
+.services-details-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  margin-top: 3em;
+  width: 100%;
+  align-items: center;
+}
+.service-detail-modern {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  background: linear-gradient(120deg, #f8faff 70%, #e3f0ff 100%);
+  border-radius: 3em;
+  box-shadow: 0 8px 40px rgba(110, 198, 255, 0.18);
+  padding: 3.5em 2.5em 3em 2.5em;
+  gap: 3.5em;
+  flex-wrap: wrap;
+  min-height: 320px;
+  max-width: 1300px;
+  width: 87%;
+  margin-bottom: 1.5em;
+  position: relative;
+  transition: box-shadow 0.25s, transform 0.22s;
+}
+.service-detail-modern:hover {
+  box-shadow: 0 16px 48px rgba(110, 198, 255, 0.22);
+  transform: translateY(-10px) scale(1.025);
+}
+.service-detail-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 320px;
+}
+.service-detail-img img {
+  width: 100%;
+  max-width: 420px;
+  height: 320px;
+  object-fit: contain;
+  border-radius: 2.2em;
+  box-shadow: 0 8px 32px rgba(110, 198, 255, 0.18);
+  background: #fff;
+  border: 4px solid #fff;
+}
+.service-detail-content {
+  flex: 2 1 400px;
+  min-width: 150px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.service-detail-content h4 {
+  color: var(--primary);
+  font-size: 2.2rem;
+  margin-top: 3.7rem;
+
+  letter-spacing: 0.5px;
+}
+.service-detail-content p {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 2.2em;
+  font-weight: 500;
+}
+.service-detail-content .more-btn {
+  font-size: 1.18rem;
+  padding: 0.9em 2.5em;
+  border-radius: 2em;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(110, 198, 255, 0.13);
+  align-self: flex-end;
+  margin-top: auto;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.service-detail-content .more-btn:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+  color: #fff;
+}
+
+/* ========== CTA Banner (الرئيسية) ========== */
+.cta-banner {
+  background: var(--secondary);
+  color: #fff;
+  text-align: center;
+  padding: 2.5em 1em;
+  margin: 0;
+}
+.cta-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+/* ========== Why Platform Section (الرئيسية) ========== */
+.why-platform {
+  background: var(--primary-gradient);
+  padding: 3em 1em;
+  position: relative;
+  overflow: hidden;
+}
+.why-title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 2em;
+  letter-spacing: 0.7px;
+}
+.why-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1450px;
+  margin: 2em auto;
+}
+.why-card {
+  background: #fff;
+  border-radius: 2.5em 1.2em 2.5em 1.2em;
+  box-shadow: var(--shadow);
+  padding: 2.2em 1.5em 1.5em 1.5em;
+  width: 270px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.28s cubic-bezier(0.23, 1.02, 0.47, 0.98),
+    transform 0.28s cubic-bezier(0.23, 1.02, 0.47, 0.98),
+    filter 0.28s cubic-bezier(0.23, 1.02, 0.47, 0.98);
+  will-change: transform, box-shadow, filter;
+}
+.why-card:hover {
+  box-shadow: 0 8px 32px 0 #00fff755, 0 2px 16px 0 #6ec6ff55, 0 0 0 6px #f8faff;
+  transform: translateY(-14px) scale(1.06) rotate(-1.5deg);
+  filter: brightness(1.07) drop-shadow(0 0 18px #7c4dff44);
+  border: 2px solid #b388ff;
+  background: linear-gradient(120deg, #fff 80%, #e3f0ff 100%);
+  z-index: 2;
+}
+.why-icon {
+  width: 56px;
+  height: 56px;
+  background: #f8faff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(110, 198, 255, 0.1);
+}
+.why-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.why-card h3 {
+  color: var(--secondary);
+  font-size: 1.25rem;
+  margin-bottom: 0.7em;
+}
+.why-card p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ========== Stats Section ========== */
+.stats-section {
+  background: var(--primary-gradient);
+  color: #fff;
+  padding: 3em 1em;
+  text-align: center;
+}
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.stat-item {
+  flex: 1;
+  min-width: 180px;
+}
+.stat-icon {
+  margin-bottom: 0.5em;
+}
+.stat-icon img {
+  width: 48px;
+  height: 48px;
+  filter: brightness(0.04) invert(1);
+  opacity: 0.9;
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.stat-item p {
+  font-size: 1.1rem;
+  margin-top: 0.3em;
+  font-weight: 500;
+}
+
+/* ========== Platform Info Section (الرئيسية) ========== */
+.platform-info {
+  background: #fff;
+  padding: 3em 0 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.platform-info-content {
+  background: #f8faff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2.5em 2em 2em 2em;
+  max-width: -webkit-fill-available;
+  margin: 0 auto;
+  text-align: right;
+}
+.platform-info-content h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+.platform-info-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+}
+.platform-info-content li {
+  font-size: 1.1rem;
+  margin-bottom: 1.1em;
+  padding-right: 1.5em;
+  position: relative;
+  color: #333;
+}
+.platform-info-content li:before {
+  content: "\2714";
+  color: var(--secondary);
+  position: absolute;
+  right: 0;
+  font-size: 1.2em;
+  top: 0.1em;
+}
+.platform-cta {
+  text-align: center;
+  margin-top: 1.5em;
+}
+.platform-cta .cta-btn {
+  font-size: 1.15rem;
+  padding: 0.9em 2.5em;
+  border-radius: var(--radius-lg);
+  background: var(--primary-gradient);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(110, 198, 255, 0.1);
+  transition: background 0.2s;
+}
+.platform-cta .cta-btn:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+}
+
+/* ========== About Platform Section (الرئيسية) ========== */
+.about-platform {
+  padding: 4em 1em;
+  background: #fff;
+}
+
+.about-platform-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-platform-image {
+  flex: 1 1;
+  max-width: 450px;
+}
+
+.about-platform-image video {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5em;
+  box-shadow: 0 8px 32px rgba(110, 198, 255, 0.15);
+  object-fit: cover;
+}
+
+.about-platform-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+  text-align: right;
+}
+
+.about-platform-content h2 {
+  color: var(--secondary);
+  font-size: 2.2rem;
+  margin-bottom: 0.8em;
+}
+
+.about-platform-content p {
+  color: #444;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+}
+
+.about-platform-content strong {
+  color: var(--primary);
+}
+
+/* Responsive adjustments for About Platform */
+@media (max-width: 992px) {
+  .about-platform-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5em;
+  }
+
+  .about-platform-content {
+    text-align: center;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-platform {
+    padding: 2.5em 1em;
+  }
+
+  .about-platform-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-platform-content p {
+    font-size: 1rem;
+  }
+}
+
+/* ========== Blog Section (الرئيسية) ========== */
+.blog {
+  padding: 3em 0 2em 0;
+  background: #f8faff;
+}
+.blog h2 {
+  text-align: center;
+  margin-bottom: 2em;
+  color: var(--primary);
+}
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+.blog-post {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5em 1em 1em 1em;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.blog-post:hover {
+  box-shadow: 0 4px 16px rgba(110, 198, 255, 0.18);
+}
+.blog-post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1em;
+}
+.blog-post h3 {
+  margin-bottom: 0.5em;
+  color: var(--secondary);
+}
+.blog-post p {
+  flex-grow: 1;
+  margin-bottom: 1.5em;
+}
+.read-more-btn {
+  margin-top: auto;
+  background: var(--primary-gradient);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 0.5em 1.5em;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.read-more-btn:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+}
+
+/* ========== 404 Page ========== */
+.not-found {
+  text-align: center;
+  padding: 5em 1em;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 2em auto;
+  max-width: 600px;
+}
+.not-found h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  color: var(--primary);
+}
+.not-found p {
+  margin-bottom: 1.5em;
+  color: var(--text);
+}
+.not-found a {
+  display: inline-block;
+  background: var(--primary-gradient);
+  color: #fff;
+  padding: 0.7em 2em;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.not-found a:hover {
+  background: linear-gradient(90deg, #b388ff 0%, #6ec6ff 100%);
+}
+
+/* ========== Section Wave Divider (جميع الصفحات) ========== */
+.section-wave {
+  width: 100%;
+  height: 60px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: transparent;
+  border: none;
+}
+
+/* Responsive for smaller screens */
+
+/* ========== CTA Banner (الرئيسية) ========== */
+.cta-banner {
+  background: var(--primary-gradient);
+  color: #fff;
+  text-align: center;
+  padding: 2.5em 1em;
+  margin: 0;
+}
+.cta-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.cta-banner .cta-btn {
+  background: #fff;
+  color: var(--secondary);
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  padding: 0.8em 2.2em;
+  font-size: 1.1rem;
+  margin: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-banner .cta-btn:hover {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+.cta-banner-btns {
+  display: flex;
+  gap: 1.2em;
+  justify-content: center;
+  margin-top: 1.2em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+.stat-item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ========== Journey Section (New Professional Design) ========== */
+.journey-section {
+  padding: 4em 1em;
+  background: var(--primary-gradient);
+}
+
+.journey-split-container {
+  display: flex;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5em;
+  border-radius: 1.75em; /* 28px */
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.journey-card h3 {
+  color: #fff;
+  font-size: 2.1rem;
+  line-height: 1.4;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.journey-card-action {
+  background: #fff;
+  color: black;
+  border-radius: 1.25em; /* 20px */
+  padding: 0.9em 1.8em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  align-self: flex-end;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.journey-card:hover .journey-card-action {
+  transform: scale(1.05);
+}
+
+.journey-card-decoration {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.journey-card:hover .journey-card-decoration {
+  transform: scale(1.15) rotate(15deg);
+}
+
+.deco-icon-inner {
+  position: absolute;
+  bottom: 55px;
+  left: 55px;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.deco-icon-inner img {
+  width: 30px;
+  height: 30px;
+}
+
+.deco-arrow {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+}
+.deco-arrow img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+/* Card Specific Backgrounds & Overlays */
+.journey-card {
+  background-size: cover;
+  background-position: center;
+}
+
+.journey-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.journey-provider {
+  background-image: url("https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.journey-provider::before {
+  background: linear-gradient(
+    45deg,
+    rgba(50, 87, 127, 0.7),
+    rgba(216, 216, 216, 0.5)
+  );
+}
+
+.journey-customer {
+  background-image: url("https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.journey-customer::before {
+  background: linear-gradient(
+    45deg,
+    rgba(112, 50, 127, 0.7),
+    rgba(216, 216, 216, 0.5)
+  );
+}
+.journey-customer .journey-card-action {
+  color: #0c9fff;
+}
+
+@media (max-width: 650px) {
+  .journey-split-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .journey-card h3 {
+    font-size: 1.8rem;
+  }
+}

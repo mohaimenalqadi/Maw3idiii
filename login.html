@@ -1,0 +1,160 @@
+<!--
+feat: add login.html for appointment platform (Arabic RTL, flex)
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/auth.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">موعدي</a>
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="navbar-links" id="navbar-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">الخدمات</a>
+            <div class="dropdown-content">
+              <a href="category-doctors.html">أطباء</a>
+              <a href="category-teachers.html">أساتذة</a>
+              <a href="category-workers.html">عمّال</a>
+            </div>
+          </li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+          <li><a href="login.html">تسجيل الدخول</a></li>
+          <li><a href="signup-customer.html" class="cta">إنشاء حساب</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="centered-form-container">
+      <form class="auth-form" autocomplete="off">
+        <h1>تسجيل الدخول</h1>
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">كلمة المرور</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" required />
+          <span class="password-toggle-icon" id="password-toggle">👁️</span>
+        </div>
+        <div class="form-extra-options">
+          <label class="checkbox-container">
+            <input type="checkbox" name="remember" />
+            تذكرني
+          </label>
+          <a href="#">هل نسيت كلمة المرور؟</a>
+        </div>
+        <button type="submit" class="cta-btn">دخول</button>
+        <div class="divider"><span>أو</span></div>
+        <div class="social-login-container">
+          <button type="button" class="social-login-btn facebook-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/facebook-new.png"
+              alt="Facebook"
+            />
+            <span>المتابعة مع Facebook</span>
+          </button>
+          <button type="button" class="social-login-btn google-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/google-logo.png"
+              alt="Google"
+            />
+            <span>المتابعة مع Google</span>
+          </button>
+        </div>
+        <div class="form-links">
+          <span
+            >مستخدم جديد؟ <a href="signup-customer.html">أنشئ حسابًا</a></span
+          >
+        </div>
+      </form>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section footer-quicklinks">
+          <h4>الوصول السريع</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category-doctors.html">الأطباء</a></li>
+            <li><a href="category-teachers.html">الأساتذة</a></li>
+            <li><a href="category-workers.html">العمّال</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="login.html">تسجيل الدخول</a></li>
+            <li><a href="signup-customer.html">إنشاء حساب</a></li>
+          </ul>
+        </div>
+        <div class="footer-section footer-contact">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>
+              <span style="font-weight: bold">الموقع:</span> بنغازي – ليبيا
+            </li>
+            <li>
+              <span style="font-weight: bold">الهاتف:</span> ‎+218 91 2345678
+            </li>
+            <li>
+              <span style="font-weight: bold">البريد:</span>
+              <a href="mailto:info@platform.ly">info@platform.ly</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section footer-social">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="فيسبوك"
+              ><img
+                src="https://img.icons8.com/color/48/000000/facebook-new.png"
+                alt="فيسبوك"
+            /></a>
+            <a href="https://twitter.com" target="_blank" aria-label="تويتر"
+              ><img
+                src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+                alt="تويتر"
+            /></a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="انستغرام"
+              ><img
+                src="https://img.icons8.com/color/48/000000/instagram-new.png"
+                alt="انستغرام"
+            /></a>
+            <a
+              href="https://wa.me/218912345678"
+              target="_blank"
+              aria-label="واتساب"
+              ><img
+                src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                alt="واتساب"
+            /></a>
+          </div>
+        </div>
+        <div class="footer-section footer-about">
+          <h4>عن المنصة</h4>
+          <p>
+            منصة ليبية متخصصة في ربط العملاء مع أفضل الأطباء والمتخصصين في جميع
+            أنحاء ليبيا.<br />
+            جميع الحقوق محفوظة &copy; 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

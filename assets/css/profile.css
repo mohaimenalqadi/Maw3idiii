@@ -1,0 +1,326 @@
+/* ==== Profile Page Layout ==== */
+.profile-main {
+  max-width: 950px;
+  margin: 2em auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-details {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+/* ==== New Profile Summary Card ==== */
+.profile-summary-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 2em 7em;
+  text-align: center;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1em auto;
+}
+
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #28a745;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.profile-summary-card h2 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.profile-email {
+  color: #777;
+  font-size: 0.95em;
+  margin: 0.3em 0 0.5em 0;
+}
+
+.member-since {
+  color: #999;
+  font-size: 0.85em;
+  margin-bottom: 1.5em;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1em 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.profile-customer-rating {
+  margin-top: 1.5em;
+  font-size: 1em;
+  color: #555;
+  font-weight: 600;
+}
+
+.rating-value {
+  margin-right: 0.5em;
+  color: #333;
+}
+
+.rating-value .star {
+  color: #ffc107;
+}
+
+/* ==== Existing Sections ==== */
+.profile-card,
+.profile-bookings {
+  background: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  padding: 2em;
+}
+
+.profile-card h2,
+.profile-bookings h3 {
+  text-align: center;
+  color: var(--secondary);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.profile-card label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.profile-card input {
+  width: 100%;
+  margin-top: 0.3em;
+}
+
+.profile-card .cta-btn {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.profile-bookings h3 {
+  color: #6ec6ff;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.booking-item {
+  border-bottom: 1px solid #eee;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-item:last-child {
+  border-bottom: none;
+}
+
+.booking-info {
+  flex: 1;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 0.8em;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bookings-table th {
+  color: #555;
+  font-weight: 600;
+}
+
+.bookings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bookings-table td {
+  font-size: 1.04em;
+}
+
+.cancel-booking-btn {
+  background: #ffebee;
+  color: #c62828;
+  border: none;
+  padding: 0.4em 0.8em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.cancel-booking-btn:hover {
+  background: #ffcdd2;
+}
+
+.profile-link.active .profile-icon {
+  font-weight: bold;
+  color: #b388ff;
+}
+
+/* ========== Responsive Design for Profile Page ========== */
+
+/* -- For Tablets and smaller devices -- */
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0 1em; /* Add padding for smaller screens */
+  }
+
+  .profile-summary-card {
+    flex-basis: 100%; /* Take full width */
+    max-width: 500px;
+    order: 1; /* Show summary card first */
+  }
+
+  .profile-details {
+    width: 100%;
+    max-width: 500px;
+    order: 2; /* Show details after */
+  }
+
+  /* Make table scrollable on smaller screens */
+  .profile-bookings {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bookings-table {
+    min-width: 550px; /* Force scrollbar if content is wide */
+  }
+}
+
+/* -- For Mobile Phones (420px and below) -- */
+@media (max-width: 420px) {
+  .profile-main {
+    padding: 0 0.5em; /* Reduce padding further */
+    margin: 1em auto;
+  }
+
+  .profile-card,
+  .profile-bookings,
+  .profile-summary-card {
+    padding: 1.5em 1.4em;
+    border-radius: 1.2em;
+  }
+
+  .profile-summary-card h2 {
+    font-size: 1.2em;
+  }
+
+  .profile-email {
+    font-size: 0.9em;
+  }
+
+  .member-since {
+    font-size: 0.75em;
+  }
+
+  .profile-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 1.2em;
+  }
+
+  .stat-label {
+    font-size: 0.75em;
+  }
+
+  .profile-customer-rating {
+    font-size: 0.9em;
+  }
+
+  .bookings-table {
+    font-size: 0.9em;
+  }
+
+  .cancel-booking-btn {
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 940px) {
+  .profile-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .profile-summary-card,
+  .profile-details {
+    flex-basis: auto;
+    max-width: 600px;
+  }
+
+  .profile-summary-card {
+    order: 1;
+  }
+
+  .profile-details {
+    order: 2;
+  }
+}

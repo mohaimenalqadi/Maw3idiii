@@ -1,0 +1,121 @@
+/* =============================== */
+/*         شريط التنقل NAVBAR      */
+/* =============================== */
+.navbar {
+  background: #fff;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.7em 2em;
+}
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar-links li {
+  position: relative;
+}
+.navbar-links .cta {
+  background: var(--primary-gradient);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 0.5em 1.5em;
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 0.3em;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.navbar-toggle .bar {
+  width: 28px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 140px;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
+  top: 2.5em;
+  right: 0;
+  z-index: 10;
+  flex-direction: column;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: flex;
+}
+.dropdown-content a {
+  padding: 0.7em 1.2em;
+  color: var(--text);
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+.dropdown-content a:last-child {
+  border-bottom: none;
+  border-radius: 7px;
+}
+.dropdown-content a:hover {
+  background: #f8f8ff;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.7em 1em;
+  }
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 100vw;
+    box-shadow: var(--shadow);
+    border-radius: 0 0 var(--radius) var(--radius);
+    gap: 0;
+    display: none;
+  }
+  .navbar-links.open {
+    display: flex;
+  }
+  .navbar-links li {
+    width: 100%;
+  }
+  .navbar-links a,
+  .navbar-links .cta {
+    display: block;
+    padding: 1em 2em;
+  }
+  .navbar-toggle {
+    display: flex;
+  }
+}

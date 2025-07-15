@@ -1,0 +1,352 @@
+<!--
+feat: add signup-customer.html for appointment platform (Arabic RTL, flex)
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>إنشاء حساب عميل</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/signup.css" />
+    <link rel="stylesheet" href="assets/css/auth.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">موعدي</a>
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="navbar-links" id="navbar-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">الخدمات</a>
+            <div class="dropdown-content">
+              <a href="category-doctors.html">أطباء</a>
+              <a href="category-teachers.html">أساتذة</a>
+              <a href="category-workers.html">عمّال</a>
+            </div>
+          </li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+          <li><a href="login.html">تسجيل الدخول</a></li>
+          <li><a href="signup-customer.html" class="cta">إنشاء حساب</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="centered-form-container">
+      <div class="account-type-tabs" id="account-type-tabs">
+        <button type="button" class="tab-btn active" data-type="customer">
+          عميل
+        </button>
+        <button type="button" class="tab-btn" data-type="provider">
+          مزود خدمة
+        </button>
+      </div>
+      <form
+        class="auth-form"
+        id="customer-form"
+        autocomplete="off"
+        style="display: block"
+      >
+        <h1>إنشاء حساب عميل</h1>
+        <label for="customer-name">الاسم الكامل</label>
+        <input type="text" id="customer-name" name="name" required />
+        <label for="customer-email">البريد الإلكتروني</label>
+        <input type="email" id="customer-email" name="email" required />
+        <label for="customer-phone">رقم الهاتف</label>
+        <input type="tel" id="customer-phone" name="phone" required />
+        <label for="customer-password">كلمة المرور</label>
+        <input
+          type="password"
+          id="customer-password"
+          name="password"
+          required
+        />
+        <label for="customer-password-confirm">تأكيد كلمة المرور</label>
+        <input
+          type="password"
+          id="customer-password-confirm"
+          name="password-confirm"
+          required
+        />
+        <div class="form-extra-options">
+          <label class="checkbox-container">
+            <input type="checkbox" name="terms" required />
+            أوافق على <a href="#">الشروط والأحكام</a>
+          </label>
+        </div>
+        <button type="submit" class="cta-btn">إنشاء حساب</button>
+        <div class="divider"><span>أو</span></div>
+        <div class="social-login-container">
+          <button type="button" class="social-login-btn facebook-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/facebook-new.png"
+              alt="Facebook"
+            />
+            <span>المتابعة مع Facebook</span>
+          </button>
+          <button type="button" class="social-login-btn google-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/google-logo.png"
+              alt="Google"
+            />
+            <span>المتابعة مع Google</span>
+          </button>
+        </div>
+        <div
+          id="customer-password-error"
+          style="
+            color: #d32f2f;
+            font-size: 0.98em;
+            display: none;
+            margin-bottom: 0.7em;
+          "
+        ></div>
+        <div class="form-links">
+          <span>هل أنت مقدم خدمة؟ اختر التبويب بالأعلى</span>
+        </div>
+      </form>
+      <form
+        class="auth-form"
+        id="provider-form"
+        autocomplete="off"
+        enctype="multipart/form-data"
+        style="display: none"
+      >
+        <h1>إنشاء حساب مزود خدمة</h1>
+        <label for="provider-name">الاسم الكامل</label>
+        <input type="text" id="provider-name" name="name" required />
+        <label for="provider-email">البريد الإلكتروني</label>
+        <input type="email" id="provider-email" name="email" required />
+        <label for="provider-phone">رقم الهاتف</label>
+        <input type="tel" id="provider-phone" name="phone" required />
+        <label for="provider-password">كلمة المرور</label>
+        <input
+          type="password"
+          id="provider-password"
+          name="password"
+          required
+        />
+        <label for="provider-password-confirm">تأكيد كلمة المرور</label>
+        <input
+          type="password"
+          id="provider-password-confirm"
+          name="password-confirm"
+          required
+        />
+        <label for="provider-photo">رفع صورة شخصية</label>
+        <input type="file" id="provider-photo" name="photo" accept="image/*" />
+        <label for="provider-profession">المهنة</label>
+        <select id="provider-profession" name="profession" required>
+          <option value="doctor">طبيب</option>
+          <option value="engineer">مهندس</option>
+          <option value="teacher">أستاذ</option>
+          <option value="worker">عامل</option>
+        </select>
+        <label for="provider-category">الفئة</label>
+        <select id="provider-category" name="category" required>
+          <!-- الفئات ستملأ ديناميكياً حسب المهنة -->
+        </select>
+        <div id="doctor-specialty-container" style="display: none">
+          <label for="doctor-specialty">تخصص الطبيب</label>
+          <select id="doctor-specialty" name="specialty">
+            <option value="">اختر التخصص</option>
+            <option value="جراحة">جراحة</option>
+            <option value="قلب">قلب</option>
+            <option value="عيون">عيون</option>
+            <option value="عظام">عظام</option>
+          </select>
+        </div>
+        <label>أيام العمل المتاحة</label>
+        <div class="workdays-checkboxes">
+          <label
+            ><input type="checkbox" name="workdays" value="السبت" />
+            السبت</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الأحد" />
+            الأحد</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الاثنين" />
+            الاثنين</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الثلاثاء" />
+            الثلاثاء</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الأربعاء" />
+            الأربعاء</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الخميس" />
+            الخميس</label
+          >
+          <label
+            ><input type="checkbox" name="workdays" value="الجمعة" />
+            الجمعة</label
+          >
+        </div>
+        <label>ساعات العمل</label>
+        <div class="workhours-row">
+          <div class="workhour-field">
+            <label for="workhour-from">من</label>
+            <input
+              type="time"
+              id="workhour-from"
+              name="workhour-from"
+              required
+            />
+          </div>
+          <div class="workhour-field">
+            <label for="workhour-to">إلى</label>
+            <input type="time" id="workhour-to" name="workhour-to" required />
+          </div>
+        </div>
+        <label for="provider-bio">السيرة الذاتية</label>
+        <textarea
+          id="provider-bio"
+          name="bio"
+          rows="4"
+          placeholder="اكتب سيرتك الذاتية وخبراتك المهنية باختصار"
+          required
+        ></textarea>
+        <div class="social-links-row flex gap-1">
+          <div class="flex-col flex-1">
+            <label for="provider-facebook">رابط فيسبوك</label>
+            <input
+              type="url"
+              id="provider-facebook"
+              name="facebook"
+              placeholder="رابط صفحتك على فيسبوك (اختياري)"
+              pattern="https?://(www\\.)?facebook.com/.+"
+              dir="ltr"
+            />
+          </div>
+          <div class="flex-col flex-1">
+            <label for="provider-linkedin">رابط لينكدإن</label>
+            <input
+              type="url"
+              id="provider-linkedin"
+              name="linkedin"
+              placeholder="رابط ملفك على لينكدإن (اختياري)"
+              pattern="https?://(www\\.)?linkedin.com/.+"
+              dir="ltr"
+            />
+          </div>
+        </div>
+        <div class="form-extra-options">
+          <label class="checkbox-container">
+            <input type="checkbox" name="terms-provider" required />
+            أوافق على <a href="#">شروط وأحكام مزودي الخدمة</a>
+          </label>
+        </div>
+        <button type="submit" class="cta-btn">إنشاء حساب</button>
+        <div class="divider"><span>أو</span></div>
+        <div class="social-login-container">
+          <button type="button" class="social-login-btn facebook-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/facebook-new.png"
+              alt="Facebook"
+            />
+            <span>المتابعة مع Facebook</span>
+          </button>
+          <button type="button" class="social-login-btn google-btn">
+            <img
+              src="https://img.icons8.com/color/24/000000/google-logo.png"
+              alt="Google"
+            />
+            <span>المتابعة مع Google</span>
+          </button>
+        </div>
+        <div class="form-links">
+          <span>هل أنت عميل؟ اختر التبويب بالأعلى</span>
+        </div>
+      </form>
+    </main>
+    <!-- تم نقل كود جافاسكريبت إلى main.js -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section footer-quicklinks">
+          <h4>الوصول السريع</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category-doctors.html">الأطباء</a></li>
+            <li><a href="category-teachers.html">الأساتذة</a></li>
+            <li><a href="category-workers.html">العمّال</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="login.html">تسجيل الدخول</a></li>
+            <li><a href="signup-customer.html">إنشاء حساب</a></li>
+          </ul>
+        </div>
+        <div class="footer-section footer-contact">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>
+              <span style="font-weight: bold">الموقع:</span> بنغازي – ليبيا
+            </li>
+            <li>
+              <span style="font-weight: bold">الهاتف:</span> ‎+218 91 2345678
+            </li>
+            <li>
+              <span style="font-weight: bold">البريد:</span>
+              <a href="mailto:info@platform.ly">info@platform.ly</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section footer-social">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="فيسبوك"
+              ><img
+                src="https://img.icons8.com/color/48/000000/facebook-new.png"
+                alt="فيسبوك"
+            /></a>
+            <a href="https://twitter.com" target="_blank" aria-label="تويتر"
+              ><img
+                src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+                alt="تويتر"
+            /></a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="انستغرام"
+              ><img
+                src="https://img.icons8.com/color/48/000000/instagram-new.png"
+                alt="انستغرام"
+            /></a>
+            <a
+              href="https://wa.me/218912345678"
+              target="_blank"
+              aria-label="واتساب"
+              ><img
+                src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                alt="واتساب"
+            /></a>
+          </div>
+        </div>
+        <div class="footer-section footer-about">
+          <h4>عن المنصة</h4>
+          <p>
+            منصة ليبية متخصصة في ربط العملاء مع أفضل الأطباء والمتخصصين في جميع
+            أنحاء ليبيا.<br />
+            جميع الحقوق محفوظة &copy; 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
